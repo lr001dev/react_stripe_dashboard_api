@@ -153,3 +153,14 @@ Processing by SessionsController#index as HTML
 Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 1.2ms | Allocations: 2176)
 
 
+Started GET "/" for ::1 at 2019-08-08 13:19:16 -0700
+  
+SyntaxError (/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/welcome_controller.rb:4: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/welcome_controller.rb:4: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/welcome_controller.rb:4: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2019-08-08 13:19:33 -0700
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 146)
+
+
