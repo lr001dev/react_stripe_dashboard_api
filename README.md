@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# react_stripe_dashboard_api
+>>>>>>> da11e2ff97260b0cb1b1988f62ae471916846c91
