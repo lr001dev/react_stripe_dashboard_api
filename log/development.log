@@ -546,3 +546,910 @@ Migrating to CreatePasswordDigestColumn (20190810180547)
   [1m[36mActiveRecord::InternalMetadata Load (35.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4814899629542023665)[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users" for ::1 at 2019-08-10 11:16:15 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Jerry", "last_name"=>"Rodriquez", "email"=>"luisrosariomix@gmail.com", "username"=>"technoman", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (168.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jerry"], ["last_name", "Rodriquez"], ["email", "luisrosariomix@gmail.com"], ["username", "technoman"], ["password", "music"], ["created_at", "2019-08-10 18:16:16.400475"], ["updated_at", "2019-08-10 18:16:16.400475"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 243ms (Views: 34.7ms | ActiveRecord: 174.6ms | Allocations: 9952)
+
+
+Started GET "/users" for ::1 at 2019-08-10 11:16:37 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"first_name"=>"Jerry", "last_name"=>"Rodriquez", "email"=>"luisrosariomix@gmail.com", "username"=>"technoman", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1276)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4814899629542023665)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeletePasswordInUser (20190810182112)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (155.5ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "password"[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190810182112"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4814899629542023665)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2019-08-10 11:28:14 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"first_name"=>"Jerry", "last_name"=>"Smith", "email"=>"luisrosariomix@gmail.com", "username"=>"yogamaster", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 550)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:6:in `index'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from block in <module:ContentHelper> at /Users/g360home/.rbenv/versions/2.5.5/lib/ruby/gems/2.5.0/gems/actiontext-6.0.0.rc2/app/helpers/action_text/content_helper.rb:7)
+Started GET "/users" for ::1 at 2019-08-10 11:30:19 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"first_name"=>"Jerry", "last_name"=>"Smith", "email"=>"luisrosariomix@gmail.com", "username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 37ms (Views: 13.5ms | ActiveRecord: 7.7ms | Allocations: 7806)
+
+
+Started POST "/users" for ::1 at 2019-08-10 11:30:44 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Jerry", "last_name"=>"Smith", "email"=>"luisrosariomix@gmail.com", "username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jerry"], ["last_name", "Smith"], ["email", "luisrosariomix@gmail.com"], ["username", "yogamaster"], ["created_at", "2019-08-10 18:30:45.268655"], ["updated_at", "2019-08-10 18:30:45.268655"], ["password_digest", "$2a$12$UQ57pOmstjYWrVzESLTDpekBV1lukeW1YJwTesxUNQ6dUa.bhVhnK"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 392ms (Views: 1.4ms | ActiveRecord: 2.7ms | Allocations: 2949)
+
+
+Started POST "/login" for ::1 at 2019-08-10 12:36:18 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0.rc2) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/user/login" for ::1 at 2019-08-10 12:36:42 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/user/login"):
+  
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0.rc2) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2019-08-10 12:53:23 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 216ms (Views: 162.5ms | ActiveRecord: 2.0ms | Allocations: 7238)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 12:53:44 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 0.9ms | Allocations: 3904)
+
+
+  
+NoMethodError (undefined method `authentication' for #<User:0x00007f95812e3880>
+Did you mean?  authenticate):
+  
+app/controllers/users_controller.rb:18:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 12:56:36 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 528ms (Views: 1.0ms | ActiveRecord: 92.8ms | Allocations: 7103)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 12:58:10 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 437ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 726)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 12:58:20 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 452ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 739)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 12:58:30 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 486ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 883)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 15:21:10 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (143.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 660ms (ActiveRecord: 144.2ms | Allocations: 8158)
+
+
+  
+NameError (uninitialized constant UsersController::JWT):
+  
+app/controllers/users_controller.rb:58:in `create_token'
+app/controllers/users_controller.rb:19:in `login'
+Started GET "/users/login" for ::1 at 2019-08-10 15:25:36 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}, "id"=>"login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+Completed 404 Not Found in 680ms (ActiveRecord: 650.4ms | Allocations: 1900)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/controllers/users_controller.rb:54:in `set_user'
+Started GET "/users" for ::1 at 2019-08-10 15:25:59 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 76ms (Views: 74.9ms | ActiveRecord: 0.5ms | Allocations: 6288)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 15:26:24 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (9.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 359ms (ActiveRecord: 9.7ms | Allocations: 2269)
+
+
+  
+NameError (uninitialized constant UsersController::JWT):
+  
+app/controllers/users_controller.rb:58:in `create_token'
+app/controllers/users_controller.rb:19:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 15:30:28 -0700
+  [1m[35m (106.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 406ms (ActiveRecord: 7.5ms | Allocations: 9350)
+
+
+  
+NoMethodError (undefined method `to' for 2019-08-10 15:30:29 -0700:Time):
+  
+app/controllers/users_controller.rb:67:in `payload'
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 15:32:50 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 478ms (ActiveRecord: 10.7ms | Allocations: 7935)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:68:in `payload'
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 15:33:46 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 513ms (ActiveRecord: 4.0ms | Allocations: 7802)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:68:in `payload'
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 15:46:04 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 430ms (ActiveRecord: 0.8ms | Allocations: 7645)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:68:in `payload'
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 15:48:32 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 399ms (ActiveRecord: 6.3ms | Allocations: 9126)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:68:in `payload'
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 16:02:06 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 805ms (ActiveRecord: 1.5ms | Allocations: 7641)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:68:in `payload'
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 16:05:34 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 515ms (ActiveRecord: 11.4ms | Allocations: 7846)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 17:05:58 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 531ms (ActiveRecord: 34.1ms | Allocations: 9029)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 17:11:11 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:61: syntax error, unexpected tSYMBEG, expecting ')'
+...s.application.credentials.dig :jwt_secret, 'HS256')
+...                              ^
+/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:61: syntax error, unexpected ')', expecting keyword_end
+...tials.dig :jwt_secret, 'HS256')
+...                              ^
+/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:80: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:61: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/users_controller.rb:61: syntax error, unexpected ')', expecting keyword_end
+app/controllers/users_controller.rb:80: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:61: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/users_controller.rb:61: syntax error, unexpected ')', expecting keyword_end
+app/controllers/users_controller.rb:80: syntax error, unexpected end-of-input, expecting keyword_end
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 17:12:25 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 446ms (ActiveRecord: 5.8ms | Allocations: 9030)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 17:15:35 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 442ms (ActiveRecord: 6.1ms | Allocations: 9014)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 17:17:33 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 415ms (ActiveRecord: 8.4ms | Allocations: 9014)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:19:04 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 448ms (ActiveRecord: 7.7ms | Allocations: 7804)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 17:19:39 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 365ms (ActiveRecord: 5.5ms | Allocations: 9015)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 17:20:50 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 393ms (ActiveRecord: 5.4ms | Allocations: 9014)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 17:21:26 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 387ms (Views: 23.2ms | ActiveRecord: 6.1ms | Allocations: 8314)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 17:21:57 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 451ms (ActiveRecord: 8.1ms | Allocations: 7849)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:22:17 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 373ms (ActiveRecord: 5.1ms | Allocations: 7811)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:23:56 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 472ms (ActiveRecord: 8.8ms | Allocations: 7790)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:24:07 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 587ms (ActiveRecord: 4.4ms | Allocations: 7867)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:23:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:24:42 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 541ms (ActiveRecord: 4.4ms | Allocations: 7793)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `puts'
+app/controllers/users_controller.rb:61:in `puts'
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:27:11 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 428ms (ActiveRecord: 5.1ms | Allocations: 7792)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 17:31:15 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 392ms (ActiveRecord: 6.2ms | Allocations: 9016)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:37:47 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 474ms (Views: 76.9ms | ActiveRecord: 5.9ms | Allocations: 6963)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 17:38:31 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 396ms (Views: 1.1ms | ActiveRecord: 17.0ms | Allocations: 7112)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 17:38:56 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 437ms (ActiveRecord: 14.3ms | Allocations: 7208)
+
+
+  
+NoMethodError (undefined method `jwt_secret' for nil:NilClass):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:39:08 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 550ms (ActiveRecord: 11.8ms | Allocations: 7789)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:39:32 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 379ms (Views: 1.0ms | ActiveRecord: 7.2ms | Allocations: 7103)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 17:46:12 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 415ms (ActiveRecord: 11.7ms | Allocations: 8177)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/users_controller.rb:62:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:46:34 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 684ms (ActiveRecord: 20.7ms | Allocations: 7853)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:46:53 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 376ms (ActiveRecord: 7.0ms | Allocations: 7012)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/users_controller.rb:62:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:48:26 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 461ms (ActiveRecord: 8.5ms | Allocations: 7829)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:48:43 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 468ms (ActiveRecord: 17.3ms | Allocations: 6998)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/users_controller.rb:62:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:48:59 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 468ms (Views: 1.1ms | ActiveRecord: 11.6ms | Allocations: 7121)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 17:49:16 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 379ms (Views: 0.7ms | ActiveRecord: 8.8ms | Allocations: 7074)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 17:49:35 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 418ms (ActiveRecord: 6.2ms | Allocations: 15738)
+
+
+  
+NoMethodError (undefined method `credential' for #<ReactStripeDashboardApi::Application:0x00007fe8761efad0>
+Did you mean?  credentials):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:49:41 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 717ms (ActiveRecord: 7.3ms | Allocations: 7790)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:50:03 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 417ms (ActiveRecord: 5.6ms | Allocations: 7227)
+
+
+  
+NoMethodError (undefined method `dig' for nil:NilClass):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:50:29 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 451ms (ActiveRecord: 6.3ms | Allocations: 7206)
+
+
+  
+NoMethodError (undefined method `jw_secret' for nil:NilClass):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 17:50:43 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 703ms (ActiveRecord: 14.8ms | Allocations: 7816)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 17:59:21 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 547ms (ActiveRecord: 0.9ms | Allocations: 7651)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 18:04:47 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 434ms (ActiveRecord: 13.7ms | Allocations: 7823)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 18:05:41 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 500ms (ActiveRecord: 8.8ms | Allocations: 7790)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 18:07:05 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 793ms (ActiveRecord: 7.2ms | Allocations: 7789)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 18:07:39 -0700
+  [1m[35m (44.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 389ms (ActiveRecord: 9.0ms | Allocations: 9015)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 18:08:08 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 456ms (ActiveRecord: 9.0ms | Allocations: 7807)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 18:08:28 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 552ms (Views: 1.0ms | ActiveRecord: 6.9ms | Allocations: 7142)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 18:09:01 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 391ms (ActiveRecord: 12.1ms | Allocations: 7191)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 18:09:20 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 433ms (ActiveRecord: 7.3ms | Allocations: 7223)
+
+
+  
+NoMethodError (undefined method `jwt_secret' for nil:NilClass):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 18:09:50 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 384ms (Views: 1.0ms | ActiveRecord: 8.6ms | Allocations: 7084)
+
+
+Started POST "/users/login" for ::1 at 2019-08-10 18:10:09 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 445ms (ActiveRecord: 4.8ms | Allocations: 7774)
+
+
+  
+NoMethodError (undefined method `deep_symbolize_keys' for "e":String):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+Started POST "/users/login" for ::1 at 2019-08-10 18:13:23 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 500 Internal Server Error in 953ms (ActiveRecord: 42.4ms | Allocations: 7509)
+
+
+  
+NoMethodError (undefined method `credentials' for Rails:Module):
+  
+app/controllers/users_controller.rb:61:in `create_token'
+app/controllers/users_controller.rb:22:in `login'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+Started POST "/users/login" for ::1 at 2019-08-10 18:39:23 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (23.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 200 OK in 606ms (Views: 16.9ms | ActiveRecord: 30.4ms | Allocations: 8427)
+
+
