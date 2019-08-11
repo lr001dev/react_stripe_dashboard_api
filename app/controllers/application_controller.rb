@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+   include ::ActionController::Cookies
+
   def authenticate_token
     puts "AUTHENTICATE JWT"
     render json: { status: 401, message: 'Unauthorized' } unless decode_token(bearer_token)
@@ -17,7 +19,8 @@ class ApplicationController < ActionController::API
   def decode_token(token_input)
     # puts "DECODE TOKEN, token input: #{ token_input }"
     # puts token = JWT.decode(token_input, ENV["JWT_SECRET"], true, { :algorithm => 'HS256'})
-    JWT.decode(token_input, ENV["JWT_SECRET"], true, { :algorithm => 'HS256'})
+    jwt = cookies.signed[:jwt]
+    JWT.decode(jwt, ENV["JWT_SECRET"], true, { :algorithm => 'HS256'})
   rescue
     render json: { status: 401, message: 'Unauthorized' }
   end
@@ -29,7 +32,7 @@ class ApplicationController < ActionController::API
   end
 
   def authorize_user
-   render json: { status: 401, message: "Unauthorized" } unless get_current_user.id == params[:id].to_i                                                         
+   render json: { status: 401, message: "Unauthorized" } unless get_current_user.id == params[:id].to_i
  end
 
 end

@@ -21,6 +21,8 @@ class UsersController < ApplicationController
       puts user.id
       puts user.username
       token = create_token(user.id, user.username)
+      puts cookies.signed[:jwt] = { value: token, httponly: true }
+      cookies.signed[:jwt] = { value: token, httponly: true }
       render json: {status: 200, token: token, user: user}
     else
       render json: {status: 401, message: "Unauthorized"}
