@@ -16,14 +16,13 @@ class UsersController < ApplicationController
 
   def login
     user = User.find_by(username: params[:user][:username])
-    puts user
+
     if user && user.authenticate(params[:user][:password])
       puts user.id
       puts user.username
       token = create_token(user.id, user.username)
-      puts cookies.signed[:jwt] = { value: token, httponly: true }
       cookies.signed[:jwt] = { value: token, httponly: true }
-      render json: {status: 200, token: token, user: user}
+      render json: {status: 200, user: user}
     else
       render json: {status: 401, message: "Unauthorized"}
     end
