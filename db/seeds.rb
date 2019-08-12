@@ -64,3 +64,130 @@ Session.create([
     description: "The ab workout that creates ripples"
   }
 ])
+
+User.create([
+  {
+    first_name: "John",
+    last_name: "Kratom",
+    email: "jk@gmail.com",
+    username: "jmoney",
+    password_digest: BCrypt::Password.create('music')
+  },
+  {
+    first_name: "Sara",
+    last_name: "Connor",
+    email: "sc@gmail.com",
+    username: "saraplanet",
+    password_digest: BCrypt::Password.create('music')
+  },
+  {
+    first_name: "Luis",
+    last_name: "Rosario",
+    email: "lr@gmail.com",
+    username: "lr001",
+    password_digest: BCrypt::Password.create('music')
+  }
+  ])
+
+Booking.create([
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 1,
+      session_id: 7,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 2,
+      session_id: 3,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 1,
+      session_id: 5,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 2,
+      session_id: 4,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 2,
+      session_id: 7,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 2,
+      session_id: 3,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 2,
+      session_id: 6,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 3,
+      session_id: 7,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 3,
+      session_id: 5,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 3,
+      session_id: 4,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 3,
+      session_id: 3,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 2,
+      session_id: 3,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 3,
+      session_id: 1,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 1,
+      session_id: 9,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 2,
+      session_id: 6,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 1,
+      session_id: 5,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 2,
+      session_id: 5,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 3,
+      session_id: 4,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 3,
+      session_id: 2,
+    },
+    {
+      booked_date: Time.now.to_datetime,
+      user_id: 2,
+      session_id: 2,
+    },
+    ])

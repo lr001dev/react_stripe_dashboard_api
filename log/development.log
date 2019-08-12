@@ -4525,3 +4525,2421 @@ Processing by UsersController#login as HTML
 Completed 200 OK in 353ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 734)
 
 
+Started GET "/sessions" for ::1 at 2019-08-11 19:19:06 -0700
+Started GET "/sessions" for ::1 at 2019-08-11 19:19:42 -0700
+Started GET "/sessions" for ::1 at 2019-08-11 19:19:42 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (1.5ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 153ms (Views: 125.6ms | ActiveRecord: 1.5ms | Allocations: 8572)
+
+
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.5ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 1254ms (Views: 973.8ms | ActiveRecord: 280.2ms | Allocations: 8453)
+
+
+Completed 200 OK in 1323ms (Views: 60.3ms | ActiveRecord: 1260.5ms | Allocations: 13321)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 19:20:31 -0700
+Started GET "/sessions" for ::1 at 2019-08-11 19:20:31 -0700
+Processing by SessionsController#index as */*
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (8.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 79ms (Views: 66.4ms | ActiveRecord: 8.0ms | Allocations: 2303)
+
+
+  [1m[36mSession Load (53.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 76ms (Views: 21.3ms | ActiveRecord: 53.6ms | Allocations: 4426)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 19:21:17 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (1.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 76ms (Views: 67.8ms | ActiveRecord: 1.6ms | Allocations: 2180)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 19:21:19 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (2.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 2.4ms | Allocations: 2181)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 19:23:06 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (36.7ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 1462ms (Views: 1417.4ms | ActiveRecord: 36.7ms | Allocations: 2189)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 19:23:11 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.5ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.5ms | Allocations: 2180)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 19:23:27 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"yogamaster", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yogamaster"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 794ms (Views: 1.2ms | ActiveRecord: 9.7ms | Allocations: 6908)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 19:23:30 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 63ms (Views: 61.3ms | ActiveRecord: 1.3ms | Allocations: 2623)
+
+
+  [1m[35m (157.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4814899629542023665)[0m
+  [1m[35m (86.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBookings (20190812043115)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3326.5ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "booked_date" timestamp, "user_id" integer, "session_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (324.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190812043115"]]
+  [1m[35m (60.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (107.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4814899629542023665)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Exists? (5.1ms)[0m  [1m[34mSELECT 1 AS one FROM "bookings" WHERE "bookings"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1348.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_stripe_dashboard_api_development"[0m
+  [1m[35m (409.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_stripe_dashboard_api_test"[0m
+  [1m[35m (9562.8ms)[0m  [1m[35mCREATE DATABASE "react_stripe_dashboard_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (3785.6ms)[0m  [1m[35mCREATE DATABASE "react_stripe_dashboard_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (34.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (93.4ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "booked_date" timestamp, "user_id" integer, "session_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "sessions" CASCADE[0m
+  [1m[35m (52.2ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" bigserial primary key, "name" character varying, "modality" character varying, "length" integer, "trainer" character varying, "img_url" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying)[0m
+  [1m[35m (23.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190812043115)[0m
+  [1m[35m (55.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190808190054),
+(20190808190402),
+(20190808195941),
+(20190810180547),
+(20190810182112);
+
+[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (18.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-12 05:08:31.764726"], ["updated_at", "2019-08-12 05:08:31.764726"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "booked_date" timestamp, "user_id" integer, "session_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "sessions" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" bigserial primary key, "name" character varying, "modality" character varying, "length" integer, "trainer" character varying, "img_url" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying)[0m
+  [1m[35m (30.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190812043115)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190808190054),
+(20190808190402),
+(20190808195941),
+(20190810180547),
+(20190810182112);
+
+[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-12 05:08:31.888582"], ["updated_at", "2019-08-12 05:08:31.888582"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (41.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-08-12 05:08:31.904067"], ["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (17.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Night Time Yoga"], ["modality", "Yoga"], ["length", 30], ["trainer", "Michelle LeMay"], ["img_url", "https://c.ndtvimg.com//yoga_625x300_1529482160763.jpg"], ["description", "Night time yoga that prepares for you a great nights sleep"], ["created_at", "2019-08-12 05:08:32.050752"], ["updated_at", "2019-08-12 05:08:32.050752"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.3ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Shake That Bootie"], ["modality", "Fitness"], ["length", 45], ["trainer", "Madona Grimes"], ["img_url", "https://ae01.alicdn.com/kf/HTB1gixqqpuWBuNjSszbq6AS7FXaU/FRECICI-Sexy-Flaws-Textured-Booty-Leggings-High-Waist-Flaws-Booty-Tights-Workout-Fitness-Sports-Pants-Push.jpg_640x640.jpg"], ["description", "The Butt workkout of a lifetime"], ["created_at", "2019-08-12 05:08:32.073548"], ["updated_at", "2019-08-12 05:08:32.073548"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.3ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dance Hop Pop"], ["modality", "Dance"], ["length", 30], ["trainer", "Michelle LeMay"], ["img_url", "http://www.heroymusic.com/wp-content/uploads/2018/01/Dance-Pop-1024x524-3000x3000.jpg"], ["description", "Hip Hop & Pop fusion"], ["created_at", "2019-08-12 05:08:32.078703"], ["updated_at", "2019-08-12 05:08:32.078703"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Meditate Feel Great"], ["modality", "Meditation"], ["length", 30], ["trainer", "David Romero"], ["img_url", "https://cdn.searchenginejournal.com/wp-content/uploads/2019/06/how-to-build-grit-with-meditation-760x400.png"], ["description", "Gong your way to a calm mind"], ["created_at", "2019-08-12 05:08:32.084141"], ["updated_at", "2019-08-12 05:08:32.084141"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dance Party Mania"], ["modality", "Dance"], ["length", 90], ["trainer", "Michelle LeMay"], ["img_url", "https://campusrec.fsu.edu/wp-content/uploads/2019/02/dance.jpg"], ["description", "Live dj dance party in cyberspace"], ["created_at", "2019-08-12 05:08:32.090456"], ["updated_at", "2019-08-12 05:08:32.090456"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Crush Work Yoga"], ["modality", "Yoga"], ["length", 60], ["trainer", "Michelle LeMay"], ["img_url", "http://mpoweryogastudio.com/wp-content/uploads/2014/04/hero-update-1.jpg"], ["description", "Get fired up and get your day started"], ["created_at", "2019-08-12 05:08:32.096240"], ["updated_at", "2019-08-12 05:08:32.096240"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Spank Them Abs"], ["modality", "Fitness"], ["length", 20], ["trainer", "Madona Grimes"], ["img_url", "https://static.onecms.io/wp-content/uploads/sites/35/2019/07/16185123/woman-doing-best-obliques-exercises-ab-workout.jpg"], ["description", "The ab workout that creates ripples"], ["created_at", "2019-08-12 05:08:32.103003"], ["updated_at", "2019-08-12 05:08:32.103003"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Kratom"], ["email", "jk@gmail.com"], ["username", "jmoney"], ["created_at", "2019-08-12 05:08:33.125083"], ["updated_at", "2019-08-12 05:08:33.125083"], ["password_digest", "$2a$12$XcR.GmLz26PFerLUvZfNvOYGQ2eeMgXfSVHMu0NEuA5q1mjQ2CFwi"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Sara"], ["last_name", "Connor"], ["email", "sc@gmail.com"], ["username", "saraplanet"], ["created_at", "2019-08-12 05:08:33.177508"], ["updated_at", "2019-08-12 05:08:33.177508"], ["password_digest", "$2a$12$oOqS3i14gHPdoJwvhT50oeTXYFz0c9ddNg8RWR9fYgbaJSCslWCYO"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Luis"], ["last_name", "Rosario"], ["email", "lr@gmail.com"], ["username", "lr001"], ["created_at", "2019-08-12 05:08:33.182494"], ["updated_at", "2019-08-12 05:08:33.182494"], ["password_digest", "$2a$12$jry2172xtsiQprDgjO3PReNeH60g0W97O6MeywlbZZfwTmfFQKQ3K"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (987.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_stripe_dashboard_api_development"[0m
+  [1m[35m (153.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_stripe_dashboard_api_test"[0m
+  [1m[35m (2269.2ms)[0m  [1m[35mCREATE DATABASE "react_stripe_dashboard_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (380.9ms)[0m  [1m[35mCREATE DATABASE "react_stripe_dashboard_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (45.1ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "booked_date" timestamp, "user_id" integer, "session_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "sessions" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" bigserial primary key, "name" character varying, "modality" character varying, "length" integer, "trainer" character varying, "img_url" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190812043115)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190808190054),
+(20190808190402),
+(20190808195941),
+(20190810180547),
+(20190810182112);
+
+[0m
+  [1m[35m (33.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-12 05:10:51.300862"], ["updated_at", "2019-08-12 05:10:51.300862"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (73.4ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "booked_date" timestamp, "user_id" integer, "session_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "sessions" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" bigserial primary key, "name" character varying, "modality" character varying, "length" integer, "trainer" character varying, "img_url" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190812043115)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190808190054),
+(20190808190402),
+(20190808195941),
+(20190810180547),
+(20190810182112);
+
+[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-12 05:10:51.453162"], ["updated_at", "2019-08-12 05:10:51.453162"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-08-12 05:10:51.469046"], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.9ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Night Time Yoga"], ["modality", "Yoga"], ["length", 30], ["trainer", "Michelle LeMay"], ["img_url", "https://c.ndtvimg.com//yoga_625x300_1529482160763.jpg"], ["description", "Night time yoga that prepares for you a great nights sleep"], ["created_at", "2019-08-12 05:10:51.586662"], ["updated_at", "2019-08-12 05:10:51.586662"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Shake That Bootie"], ["modality", "Fitness"], ["length", 45], ["trainer", "Madona Grimes"], ["img_url", "https://ae01.alicdn.com/kf/HTB1gixqqpuWBuNjSszbq6AS7FXaU/FRECICI-Sexy-Flaws-Textured-Booty-Leggings-High-Waist-Flaws-Booty-Tights-Workout-Fitness-Sports-Pants-Push.jpg_640x640.jpg"], ["description", "The Butt workkout of a lifetime"], ["created_at", "2019-08-12 05:10:51.592991"], ["updated_at", "2019-08-12 05:10:51.592991"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.3ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dance Hop Pop"], ["modality", "Dance"], ["length", 30], ["trainer", "Michelle LeMay"], ["img_url", "http://www.heroymusic.com/wp-content/uploads/2018/01/Dance-Pop-1024x524-3000x3000.jpg"], ["description", "Hip Hop & Pop fusion"], ["created_at", "2019-08-12 05:10:51.598421"], ["updated_at", "2019-08-12 05:10:51.598421"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Meditate Feel Great"], ["modality", "Meditation"], ["length", 30], ["trainer", "David Romero"], ["img_url", "https://cdn.searchenginejournal.com/wp-content/uploads/2019/06/how-to-build-grit-with-meditation-760x400.png"], ["description", "Gong your way to a calm mind"], ["created_at", "2019-08-12 05:10:51.604139"], ["updated_at", "2019-08-12 05:10:51.604139"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.3ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dance Party Mania"], ["modality", "Dance"], ["length", 90], ["trainer", "Michelle LeMay"], ["img_url", "https://campusrec.fsu.edu/wp-content/uploads/2019/02/dance.jpg"], ["description", "Live dj dance party in cyberspace"], ["created_at", "2019-08-12 05:10:51.609854"], ["updated_at", "2019-08-12 05:10:51.609854"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.3ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Crush Work Yoga"], ["modality", "Yoga"], ["length", 60], ["trainer", "Michelle LeMay"], ["img_url", "http://mpoweryogastudio.com/wp-content/uploads/2014/04/hero-update-1.jpg"], ["description", "Get fired up and get your day started"], ["created_at", "2019-08-12 05:10:51.615073"], ["updated_at", "2019-08-12 05:10:51.615073"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Spank Them Abs"], ["modality", "Fitness"], ["length", 20], ["trainer", "Madona Grimes"], ["img_url", "https://static.onecms.io/wp-content/uploads/sites/35/2019/07/16185123/woman-doing-best-obliques-exercises-ab-workout.jpg"], ["description", "The ab workout that creates ripples"], ["created_at", "2019-08-12 05:10:51.620681"], ["updated_at", "2019-08-12 05:10:51.620681"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (98.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Kratom"], ["email", "jk@gmail.com"], ["username", "jmoney"], ["created_at", "2019-08-12 05:10:52.654099"], ["updated_at", "2019-08-12 05:10:52.654099"], ["password_digest", "$2a$12$fqVR19reE4iOWWh2xM5kPuGGLvMjpwN5wnpTwyAqCOO9VFR4js6ae"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Sara"], ["last_name", "Connor"], ["email", "sc@gmail.com"], ["username", "saraplanet"], ["created_at", "2019-08-12 05:10:52.910546"], ["updated_at", "2019-08-12 05:10:52.910546"], ["password_digest", "$2a$12$NyV26zrZczX2QWuHR8.IJuVcNFM2bNd/OrD7wOCTO3NXIVgJEVs4K"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Luis"], ["last_name", "Rosario"], ["email", "lr@gmail.com"], ["username", "lr001"], ["created_at", "2019-08-12 05:10:52.916510"], ["updated_at", "2019-08-12 05:10:52.916510"], ["password_digest", "$2a$12$PBjo5B42LPnC4lxz.2e/YuT026eVVXE6olGoe8hVqqHfo3YH6GkJC"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.9ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.004300"], ["user_id", 1], ["session_id", 7], ["created_at", "2019-08-12 05:10:53.054528"], ["updated_at", "2019-08-12 05:10:53.054528"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031800"], ["user_id", 2], ["session_id", 3], ["created_at", "2019-08-12 05:10:53.063429"], ["updated_at", "2019-08-12 05:10:53.063429"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031819"], ["user_id", 1], ["session_id", 5], ["created_at", "2019-08-12 05:10:53.071881"], ["updated_at", "2019-08-12 05:10:53.071881"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031823"], ["user_id", 2], ["session_id", 4], ["created_at", "2019-08-12 05:10:53.079888"], ["updated_at", "2019-08-12 05:10:53.079888"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031827"], ["user_id", 2], ["session_id", 7], ["created_at", "2019-08-12 05:10:53.087970"], ["updated_at", "2019-08-12 05:10:53.087970"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031831"], ["user_id", 2], ["session_id", 3], ["created_at", "2019-08-12 05:10:53.100191"], ["updated_at", "2019-08-12 05:10:53.100191"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031834"], ["user_id", 2], ["session_id", 6], ["created_at", "2019-08-12 05:10:53.108271"], ["updated_at", "2019-08-12 05:10:53.108271"]]
+  [1m[35m (141.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031838"], ["user_id", 3], ["session_id", 7], ["created_at", "2019-08-12 05:10:53.300005"], ["updated_at", "2019-08-12 05:10:53.300005"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031841"], ["user_id", 3], ["session_id", 5], ["created_at", "2019-08-12 05:10:53.308409"], ["updated_at", "2019-08-12 05:10:53.308409"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031845"], ["user_id", 3], ["session_id", 4], ["created_at", "2019-08-12 05:10:53.316091"], ["updated_at", "2019-08-12 05:10:53.316091"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031849"], ["user_id", 3], ["session_id", 3], ["created_at", "2019-08-12 05:10:53.324463"], ["updated_at", "2019-08-12 05:10:53.324463"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031852"], ["user_id", 2], ["session_id", 3], ["created_at", "2019-08-12 05:10:53.332075"], ["updated_at", "2019-08-12 05:10:53.332075"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031855"], ["user_id", 3], ["session_id", 1], ["created_at", "2019-08-12 05:10:53.340506"], ["updated_at", "2019-08-12 05:10:53.340506"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031858"], ["user_id", 1], ["session_id", 9], ["created_at", "2019-08-12 05:10:53.379548"], ["updated_at", "2019-08-12 05:10:53.379548"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031862"], ["user_id", 2], ["session_id", 6], ["created_at", "2019-08-12 05:10:53.387721"], ["updated_at", "2019-08-12 05:10:53.387721"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.7ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031865"], ["user_id", 1], ["session_id", 5], ["created_at", "2019-08-12 05:10:53.395894"], ["updated_at", "2019-08-12 05:10:53.395894"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031868"], ["user_id", 2], ["session_id", 5], ["created_at", "2019-08-12 05:10:53.404399"], ["updated_at", "2019-08-12 05:10:53.404399"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031871"], ["user_id", 3], ["session_id", 4], ["created_at", "2019-08-12 05:10:53.412601"], ["updated_at", "2019-08-12 05:10:53.412601"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031875"], ["user_id", 3], ["session_id", 2], ["created_at", "2019-08-12 05:10:53.420560"], ["updated_at", "2019-08-12 05:10:53.420560"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:10:53.031878"], ["user_id", 2], ["session_id", 2], ["created_at", "2019-08-12 05:10:53.428522"], ["updated_at", "2019-08-12 05:10:53.428522"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4814899629542023665)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4814899629542023665)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.7ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Night Time Yoga"], ["modality", "Yoga"], ["length", 30], ["trainer", "Michelle LeMay"], ["img_url", "https://c.ndtvimg.com//yoga_625x300_1529482160763.jpg"], ["description", "Night time yoga that prepares for you a great nights sleep"], ["created_at", "2019-08-12 05:11:37.216823"], ["updated_at", "2019-08-12 05:11:37.216823"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.3ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Shake That Bootie"], ["modality", "Fitness"], ["length", 45], ["trainer", "Madona Grimes"], ["img_url", "https://ae01.alicdn.com/kf/HTB1gixqqpuWBuNjSszbq6AS7FXaU/FRECICI-Sexy-Flaws-Textured-Booty-Leggings-High-Waist-Flaws-Booty-Tights-Workout-Fitness-Sports-Pants-Push.jpg_640x640.jpg"], ["description", "The Butt workkout of a lifetime"], ["created_at", "2019-08-12 05:11:37.223605"], ["updated_at", "2019-08-12 05:11:37.223605"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dance Hop Pop"], ["modality", "Dance"], ["length", 30], ["trainer", "Michelle LeMay"], ["img_url", "http://www.heroymusic.com/wp-content/uploads/2018/01/Dance-Pop-1024x524-3000x3000.jpg"], ["description", "Hip Hop & Pop fusion"], ["created_at", "2019-08-12 05:11:37.228586"], ["updated_at", "2019-08-12 05:11:37.228586"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Meditate Feel Great"], ["modality", "Meditation"], ["length", 30], ["trainer", "David Romero"], ["img_url", "https://cdn.searchenginejournal.com/wp-content/uploads/2019/06/how-to-build-grit-with-meditation-760x400.png"], ["description", "Gong your way to a calm mind"], ["created_at", "2019-08-12 05:11:37.233915"], ["updated_at", "2019-08-12 05:11:37.233915"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dance Party Mania"], ["modality", "Dance"], ["length", 90], ["trainer", "Michelle LeMay"], ["img_url", "https://campusrec.fsu.edu/wp-content/uploads/2019/02/dance.jpg"], ["description", "Live dj dance party in cyberspace"], ["created_at", "2019-08-12 05:11:37.241102"], ["updated_at", "2019-08-12 05:11:37.241102"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Crush Work Yoga"], ["modality", "Yoga"], ["length", 60], ["trainer", "Michelle LeMay"], ["img_url", "http://mpoweryogastudio.com/wp-content/uploads/2014/04/hero-update-1.jpg"], ["description", "Get fired up and get your day started"], ["created_at", "2019-08-12 05:11:37.247619"], ["updated_at", "2019-08-12 05:11:37.247619"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Spank Them Abs"], ["modality", "Fitness"], ["length", 20], ["trainer", "Madona Grimes"], ["img_url", "https://static.onecms.io/wp-content/uploads/sites/35/2019/07/16185123/woman-doing-best-obliques-exercises-ab-workout.jpg"], ["description", "The ab workout that creates ripples"], ["created_at", "2019-08-12 05:11:37.253500"], ["updated_at", "2019-08-12 05:11:37.253500"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Kratom"], ["email", "jk@gmail.com"], ["username", "jmoney"], ["created_at", "2019-08-12 05:11:38.273552"], ["updated_at", "2019-08-12 05:11:38.273552"], ["password_digest", "$2a$12$qs5MLNcMXL7PAh.CJKBN2uEGb2LjPwaqyZ2r5AvWeu5ID/h9E21hC"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Sara"], ["last_name", "Connor"], ["email", "sc@gmail.com"], ["username", "saraplanet"], ["created_at", "2019-08-12 05:11:38.279600"], ["updated_at", "2019-08-12 05:11:38.279600"], ["password_digest", "$2a$12$LKY7r/tlXugXm360bne2zu/qqWyT0fvv1vRHIxL.4rc2S8Tx24EGm"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Luis"], ["last_name", "Rosario"], ["email", "lr@gmail.com"], ["username", "lr001"], ["created_at", "2019-08-12 05:11:38.284769"], ["updated_at", "2019-08-12 05:11:38.284769"], ["password_digest", "$2a$12$Tw2cxnUektE1hrhEMmA2ee5DMPDeWuIHk63PJaaNzHebO2eT3yv0a"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293174"], ["user_id", 1], ["session_id", 7], ["created_at", "2019-08-12 05:11:38.314606"], ["updated_at", "2019-08-12 05:11:38.314606"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293221"], ["user_id", 2], ["session_id", 3], ["created_at", "2019-08-12 05:11:38.323310"], ["updated_at", "2019-08-12 05:11:38.323310"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293226"], ["user_id", 1], ["session_id", 5], ["created_at", "2019-08-12 05:11:38.336705"], ["updated_at", "2019-08-12 05:11:38.336705"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293230"], ["user_id", 2], ["session_id", 4], ["created_at", "2019-08-12 05:11:38.344144"], ["updated_at", "2019-08-12 05:11:38.344144"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293233"], ["user_id", 2], ["session_id", 7], ["created_at", "2019-08-12 05:11:38.351388"], ["updated_at", "2019-08-12 05:11:38.351388"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293236"], ["user_id", 2], ["session_id", 3], ["created_at", "2019-08-12 05:11:38.359998"], ["updated_at", "2019-08-12 05:11:38.359998"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293239"], ["user_id", 2], ["session_id", 6], ["created_at", "2019-08-12 05:11:38.367544"], ["updated_at", "2019-08-12 05:11:38.367544"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293242"], ["user_id", 3], ["session_id", 7], ["created_at", "2019-08-12 05:11:38.376116"], ["updated_at", "2019-08-12 05:11:38.376116"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293245"], ["user_id", 3], ["session_id", 5], ["created_at", "2019-08-12 05:11:38.383680"], ["updated_at", "2019-08-12 05:11:38.383680"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293248"], ["user_id", 3], ["session_id", 4], ["created_at", "2019-08-12 05:11:38.393107"], ["updated_at", "2019-08-12 05:11:38.393107"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293251"], ["user_id", 3], ["session_id", 3], ["created_at", "2019-08-12 05:11:38.400806"], ["updated_at", "2019-08-12 05:11:38.400806"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293254"], ["user_id", 2], ["session_id", 3], ["created_at", "2019-08-12 05:11:38.409098"], ["updated_at", "2019-08-12 05:11:38.409098"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293257"], ["user_id", 3], ["session_id", 1], ["created_at", "2019-08-12 05:11:38.416949"], ["updated_at", "2019-08-12 05:11:38.416949"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293279"], ["user_id", 1], ["session_id", 9], ["created_at", "2019-08-12 05:11:38.427971"], ["updated_at", "2019-08-12 05:11:38.427971"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293282"], ["user_id", 2], ["session_id", 6], ["created_at", "2019-08-12 05:11:38.435457"], ["updated_at", "2019-08-12 05:11:38.435457"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293284"], ["user_id", 1], ["session_id", 5], ["created_at", "2019-08-12 05:11:38.443796"], ["updated_at", "2019-08-12 05:11:38.443796"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293287"], ["user_id", 2], ["session_id", 5], ["created_at", "2019-08-12 05:11:38.451087"], ["updated_at", "2019-08-12 05:11:38.451087"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293289"], ["user_id", 3], ["session_id", 4], ["created_at", "2019-08-12 05:11:38.463211"], ["updated_at", "2019-08-12 05:11:38.463211"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (1.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293291"], ["user_id", 3], ["session_id", 2], ["created_at", "2019-08-12 05:11:38.477820"], ["updated_at", "2019-08-12 05:11:38.477820"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:11:38.293294"], ["user_id", 2], ["session_id", 2], ["created_at", "2019-08-12 05:11:38.495673"], ["updated_at", "2019-08-12 05:11:38.495673"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/application_controller.rb:1)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "bookings" WHERE "bookings"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Load (0.6ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 1]]
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from block in <module:ContentHelper> at /Users/g360home/.rbenv/versions/2.5.5/lib/ruby/gems/2.5.0/gems/actiontext-6.0.0.rc2/app/helpers/action_text/content_helper.rb:7)
+Started GET "/sessions" for ::1 at 2019-08-11 22:13:05 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 107ms (Views: 99.6ms | ActiveRecord: 5.6ms | Allocations: 10725)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 22:13:41 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 501ms (Views: 0.4ms | ActiveRecord: 3.7ms | Allocations: 7679)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 22:13:43 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1929)
+
+
+Started POST "/users/login/" for ::1 at 2019-08-11 22:17:04 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 339ms (Views: 1.2ms | ActiveRecord: 0.7ms | Allocations: 1115)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 22:18:19 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 1914)
+
+
+Started GET "/users/6" for ::1 at 2019-08-11 22:18:35 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `get_current_user'
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 108ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1604)
+
+
+Started GET "/users/1" for ::1 at 2019-08-11 22:18:44 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `get_current_user'
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 1457)
+
+
+Started GET "/users/2" for ::1 at 2019-08-11 22:18:50 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `get_current_user'
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1457)
+
+
+Started GET "/users" for ::1 at 2019-08-11 22:18:59 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 1914)
+
+
+Started GET "/users" for ::1 at 2019-08-11 22:19:18 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms | Allocations: 1914)
+
+
+Started GET "/users" for ::1 at 2019-08-11 22:20:03 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1914)
+
+
+Started GET "/users/6" for ::1 at 2019-08-11 22:20:13 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 1026)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/users/3" for ::1 at 2019-08-11 22:20:23 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 3.4ms | Allocations: 1013)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/users/3/" for ::1 at 2019-08-11 22:20:33 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 1013)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/users/3/" for ::1 at 2019-08-11 22:20:35 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 1013)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/users/3/" for ::1 at 2019-08-11 22:20:40 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `get_current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1412)
+
+
+Started GET "/users/3/" for ::1 at 2019-08-11 22:20:42 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `get_current_user'
+Completed 200 OK in 282ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1412)
+
+
+Started GET "/users/3/" for ::1 at 2019-08-11 22:20:46 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 1013)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/users/1" for ::1 at 2019-08-11 22:21:19 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 1012)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/users/1" for ::1 at 2019-08-11 22:25:41 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 9.9ms | Allocations: 7707)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/users/lr001" for ::1 at 2019-08-11 22:25:50 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"lr001"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 628)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=lr001):
+  
+app/controllers/users_controller.rb:59:in `set_user'
+Started GET "/users/1" for ::1 at 2019-08-11 22:25:58 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 0.4ms | Allocations: 1012)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/sessions" for ::1 at 2019-08-11 22:28:04 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 65ms (Views: 17.1ms | ActiveRecord: 3.8ms | Allocations: 9870)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5231.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_stripe_dashboard_api_development"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5044.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_stripe_dashboard_api_development"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (665.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_stripe_dashboard_api_development"[0m
+  [1m[35m (140.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_stripe_dashboard_api_test"[0m
+  [1m[35m (3016.2ms)[0m  [1m[35mCREATE DATABASE "react_stripe_dashboard_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (2428.9ms)[0m  [1m[35mCREATE DATABASE "react_stripe_dashboard_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (56.3ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "booked_date" timestamp, "user_id" integer, "session_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "sessions" CASCADE[0m
+  [1m[35m (62.5ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" bigserial primary key, "name" character varying, "modality" character varying, "length" integer, "trainer" character varying, "img_url" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (131.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying)[0m
+  [1m[35m (123.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190812043115)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190808190054),
+(20190808190402),
+(20190808195941),
+(20190810180547),
+(20190810182112);
+
+[0m
+  [1m[35m (78.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-12 05:33:14.811986"], ["updated_at", "2019-08-12 05:33:14.811986"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (102.1ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "booked_date" timestamp, "user_id" integer, "session_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "sessions" CASCADE[0m
+  [1m[35m (73.9ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" bigserial primary key, "name" character varying, "modality" character varying, "length" integer, "trainer" character varying, "img_url" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (76.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying)[0m
+  [1m[35m (173.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190812043115)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190808190054),
+(20190808190402),
+(20190808195941),
+(20190810180547),
+(20190810182112);
+
+[0m
+  [1m[35m (53.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-12 05:33:15.351406"], ["updated_at", "2019-08-12 05:33:15.351406"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-08-12 05:33:15.364739"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.9ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Night Time Yoga"], ["modality", "Yoga"], ["length", 30], ["trainer", "Michelle LeMay"], ["img_url", "https://c.ndtvimg.com//yoga_625x300_1529482160763.jpg"], ["description", "Night time yoga that prepares for you a great nights sleep"], ["created_at", "2019-08-12 05:33:15.455308"], ["updated_at", "2019-08-12 05:33:15.455308"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Shake That Bootie"], ["modality", "Fitness"], ["length", 45], ["trainer", "Madona Grimes"], ["img_url", "https://ae01.alicdn.com/kf/HTB1gixqqpuWBuNjSszbq6AS7FXaU/FRECICI-Sexy-Flaws-Textured-Booty-Leggings-High-Waist-Flaws-Booty-Tights-Workout-Fitness-Sports-Pants-Push.jpg_640x640.jpg"], ["description", "The Butt workkout of a lifetime"], ["created_at", "2019-08-12 05:33:15.462040"], ["updated_at", "2019-08-12 05:33:15.462040"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.3ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dance Hop Pop"], ["modality", "Dance"], ["length", 30], ["trainer", "Michelle LeMay"], ["img_url", "http://www.heroymusic.com/wp-content/uploads/2018/01/Dance-Pop-1024x524-3000x3000.jpg"], ["description", "Hip Hop & Pop fusion"], ["created_at", "2019-08-12 05:33:15.467331"], ["updated_at", "2019-08-12 05:33:15.467331"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Meditate Feel Great"], ["modality", "Meditation"], ["length", 30], ["trainer", "David Romero"], ["img_url", "https://cdn.searchenginejournal.com/wp-content/uploads/2019/06/how-to-build-grit-with-meditation-760x400.png"], ["description", "Gong your way to a calm mind"], ["created_at", "2019-08-12 05:33:15.473202"], ["updated_at", "2019-08-12 05:33:15.473202"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dance Party Mania"], ["modality", "Dance"], ["length", 90], ["trainer", "Michelle LeMay"], ["img_url", "https://campusrec.fsu.edu/wp-content/uploads/2019/02/dance.jpg"], ["description", "Live dj dance party in cyberspace"], ["created_at", "2019-08-12 05:33:15.481366"], ["updated_at", "2019-08-12 05:33:15.481366"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.3ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Crush Work Yoga"], ["modality", "Yoga"], ["length", 60], ["trainer", "Michelle LeMay"], ["img_url", "http://mpoweryogastudio.com/wp-content/uploads/2014/04/hero-update-1.jpg"], ["description", "Get fired up and get your day started"], ["created_at", "2019-08-12 05:33:15.486689"], ["updated_at", "2019-08-12 05:33:15.486689"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Spank Them Abs"], ["modality", "Fitness"], ["length", 20], ["trainer", "Madona Grimes"], ["img_url", "https://static.onecms.io/wp-content/uploads/sites/35/2019/07/16185123/woman-doing-best-obliques-exercises-ab-workout.jpg"], ["description", "The ab workout that creates ripples"], ["created_at", "2019-08-12 05:33:15.492142"], ["updated_at", "2019-08-12 05:33:15.492142"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (87.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Kratom"], ["email", "jk@gmail.com"], ["username", "jmoney"], ["created_at", "2019-08-12 05:33:16.617741"], ["updated_at", "2019-08-12 05:33:16.617741"], ["password_digest", "$2a$12$PAzc8rPBE5lcBmBGjTxe0OLfOeQAuKT24W.dTKSmHxwMziVHC80bq"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Sara"], ["last_name", "Connor"], ["email", "sc@gmail.com"], ["username", "saraplanet"], ["created_at", "2019-08-12 05:33:16.779773"], ["updated_at", "2019-08-12 05:33:16.779773"], ["password_digest", "$2a$12$/POo1gYmWNS2h1q9WWj/7udLa5ZfnTCoJdt0rjU9twhva9upDzZOa"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Luis"], ["last_name", "Rosario"], ["email", "lr@gmail.com"], ["username", "lr001"], ["created_at", "2019-08-12 05:33:16.785347"], ["updated_at", "2019-08-12 05:33:16.785347"], ["password_digest", "$2a$12$u5dRFFktZ4DJ28yo8Jf6M.dwLRF6YJ7dgr6KLDWCXqRzkPDWBSEY2"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.7ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816407"], ["user_id", 1], ["session_id", 7], ["created_at", "2019-08-12 05:33:16.878237"], ["updated_at", "2019-08-12 05:33:16.878237"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816458"], ["user_id", 2], ["session_id", 3], ["created_at", "2019-08-12 05:33:16.886527"], ["updated_at", "2019-08-12 05:33:16.886527"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816463"], ["user_id", 1], ["session_id", 5], ["created_at", "2019-08-12 05:33:16.894599"], ["updated_at", "2019-08-12 05:33:16.894599"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816467"], ["user_id", 2], ["session_id", 4], ["created_at", "2019-08-12 05:33:16.902789"], ["updated_at", "2019-08-12 05:33:16.902789"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816470"], ["user_id", 2], ["session_id", 7], ["created_at", "2019-08-12 05:33:16.911560"], ["updated_at", "2019-08-12 05:33:16.911560"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816474"], ["user_id", 2], ["session_id", 3], ["created_at", "2019-08-12 05:33:16.919266"], ["updated_at", "2019-08-12 05:33:16.919266"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816477"], ["user_id", 2], ["session_id", 6], ["created_at", "2019-08-12 05:33:16.931466"], ["updated_at", "2019-08-12 05:33:16.931466"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816480"], ["user_id", 3], ["session_id", 7], ["created_at", "2019-08-12 05:33:16.939971"], ["updated_at", "2019-08-12 05:33:16.939971"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816583"], ["user_id", 3], ["session_id", 5], ["created_at", "2019-08-12 05:33:16.948058"], ["updated_at", "2019-08-12 05:33:16.948058"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816592"], ["user_id", 3], ["session_id", 4], ["created_at", "2019-08-12 05:33:16.955399"], ["updated_at", "2019-08-12 05:33:16.955399"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816595"], ["user_id", 3], ["session_id", 3], ["created_at", "2019-08-12 05:33:16.963182"], ["updated_at", "2019-08-12 05:33:16.963182"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816598"], ["user_id", 2], ["session_id", 3], ["created_at", "2019-08-12 05:33:16.971124"], ["updated_at", "2019-08-12 05:33:16.971124"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816601"], ["user_id", 3], ["session_id", 1], ["created_at", "2019-08-12 05:33:16.979049"], ["updated_at", "2019-08-12 05:33:16.979049"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816604"], ["user_id", 1], ["session_id", 9], ["created_at", "2019-08-12 05:33:16.986615"], ["updated_at", "2019-08-12 05:33:16.986615"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816607"], ["user_id", 2], ["session_id", 6], ["created_at", "2019-08-12 05:33:16.994831"], ["updated_at", "2019-08-12 05:33:16.994831"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816609"], ["user_id", 1], ["session_id", 5], ["created_at", "2019-08-12 05:33:17.002335"], ["updated_at", "2019-08-12 05:33:17.002335"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816612"], ["user_id", 2], ["session_id", 5], ["created_at", "2019-08-12 05:33:17.010869"], ["updated_at", "2019-08-12 05:33:17.010869"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816615"], ["user_id", 3], ["session_id", 4], ["created_at", "2019-08-12 05:33:17.018941"], ["updated_at", "2019-08-12 05:33:17.018941"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816617"], ["user_id", 3], ["session_id", 2], ["created_at", "2019-08-12 05:33:17.026706"], ["updated_at", "2019-08-12 05:33:17.026706"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("booked_date", "user_id", "session_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["booked_date", "2019-08-12 05:33:16.816620"], ["user_id", 2], ["session_id", 2], ["created_at", "2019-08-12 05:33:17.033774"], ["updated_at", "2019-08-12 05:33:17.033774"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from block in <module:ContentHelper> at /Users/g360home/.rbenv/versions/2.5.5/lib/ruby/gems/2.5.0/gems/actiontext-6.0.0.rc2/app/helpers/action_text/content_helper.rb:7)
+Started GET "/users" for ::1 at 2019-08-11 22:33:33 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 24ms (Views: 13.2ms | ActiveRecord: 5.5ms | Allocations: 9132)
+
+
+Started GET "/users/1" for ::1 at 2019-08-11 22:34:07 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 469)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/users/2" for ::1 at 2019-08-11 22:34:14 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 457)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/users/3" for ::1 at 2019-08-11 22:34:20 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 457)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/users/3" for ::1 at 2019-08-11 22:36:11 -0700
+  
+SyntaxError (/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+..._user, except: [:login, :show :create, :index]
+...                              ^
+/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+...[:login, :show :create, :index]
+...                              ^):
+  
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+Started GET "/users/3" for ::1 at 2019-08-11 22:36:21 -0700
+  
+SyntaxError (/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+..._user, except: [:login, :show :create, :index]
+...                              ^
+/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+...[:login, :show :create, :index]
+...                              ^):
+  
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+Started GET "/users/3" for ::1 at 2019-08-11 22:36:26 -0700
+  
+SyntaxError (/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+..._user, except: [:login, :show :create, :index]
+...                              ^
+/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+...[:login, :show :create, :index]
+...                              ^):
+  
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+Started GET "/users/3" for ::1 at 2019-08-11 22:36:27 -0700
+  
+SyntaxError (/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+..._user, except: [:login, :show :create, :index]
+...                              ^
+/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+...[:login, :show :create, :index]
+...                              ^):
+  
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting ']'
+app/controllers/users_controller.rb:2: syntax error, unexpected ']', expecting &. or :: or '[' or '.'
+Started GET "/users/3" for ::1 at 2019-08-11 22:37:07 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 490)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+  [1m[36mUser Load (520.8ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/users/login" for ::1 at 2019-08-11 22:52:53 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (226.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 2805ms (Views: 148.0ms | ActiveRecord: 235.1ms | Allocations: 7717)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 22:53:03 -0700
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 457)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/sessions" for ::1 at 2019-08-11 22:55:38 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (691.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 906ms (Views: 12.9ms | ActiveRecord: 698.1ms | Allocations: 9014)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 22:56:01 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 358ms (Views: 0.7ms | ActiveRecord: 3.8ms | Allocations: 6804)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 22:56:02 -0700
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 457)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/sessions" for ::1 at 2019-08-11 22:58:49 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 105ms (Views: 16.0ms | ActiveRecord: 7.8ms | Allocations: 8778)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 22:59:48 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 323ms (Views: 0.5ms | ActiveRecord: 3.2ms | Allocations: 6788)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 22:59:49 -0700
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 0.0ms | Allocations: 35963)
+
+
+  
+NoMethodError (undefined method `authorize_user' for #<UsersController:0x00007fd9d0452908>):
+  
+activesupport (6.0.0.rc2) lib/active_support/callbacks.rb:429:in `block in make_lambda'
+activesupport (6.0.0.rc2) lib/active_support/callbacks.rb:182:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.0.rc2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.0.rc2) lib/active_support/callbacks.rb:183:in `block in halting_and_conditional'
+activesupport (6.0.0.rc2) lib/active_support/callbacks.rb:514:in `block in invoke_before'
+activesupport (6.0.0.rc2) lib/active_support/callbacks.rb:514:in `each'
+activesupport (6.0.0.rc2) lib/active_support/callbacks.rb:514:in `invoke_before'
+activesupport (6.0.0.rc2) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.0.rc2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.0.rc2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.0.rc2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.0.rc2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.0.rc2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.0.rc2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.0.rc2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.0.rc2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.0.rc2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.0.rc2) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.0.rc2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.0.rc2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.0.rc2) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.0.rc2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.0.rc2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0.rc2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0.rc2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0.rc2) lib/action_dispatch/routing/route_set.rb:837:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/cookies.rb:644:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (6.0.0.rc2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0.rc2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0.rc2) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/sessions" for ::1 at 2019-08-11 23:01:41 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (1.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 225ms (Views: 14.0ms | ActiveRecord: 9.5ms | Allocations: 8795)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:02:04 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 362ms (Views: 0.5ms | ActiveRecord: 3.6ms | Allocations: 6772)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 23:02:05 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 1.7ms | Allocations: 1367)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 23:02:44 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms | Allocations: 2179)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:03:28 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 385ms (Views: 0.6ms | ActiveRecord: 7.6ms | Allocations: 6858)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 23:03:31 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1367)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 23:04:24 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.7ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 104ms (Views: 19.5ms | ActiveRecord: 13.3ms | Allocations: 8764)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:04:32 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 351ms (Views: 0.5ms | ActiveRecord: 7.6ms | Allocations: 6773)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 23:04:32 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms | Allocations: 1366)
+
+
+Started GET "/users" for ::1 at 2019-08-11 23:05:49 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 1365)
+
+
+Started GET "/favicon.ico" for ::1 at 2019-08-11 23:05:50 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0.rc2) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2019-08-11 23:05:59 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mBooking Load (27.4ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `show'
+Completed 200 OK in 485ms (Views: 0.1ms | ActiveRecord: 30.8ms | Allocations: 12386)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:06:12 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mBooking Load (1.0ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:14:in `show'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 2583)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:07:39 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mBooking Load (0.5ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:14:in `show'
+Completed 200 OK in 184ms (Views: 0.2ms | ActiveRecord: 15.3ms | Allocations: 14040)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:07:42 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2568)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:08:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:14:in `show'
+Completed 200 OK in 103ms (Views: 0.2ms | ActiveRecord: 15.6ms | Allocations: 14048)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:09:59 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 504)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:29:in `authorize_user'
+Started GET "/users/3" for ::1 at 2019-08-11 23:10:32 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 514)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:30:in `authorize_user'
+Started GET "/users/3" for ::1 at 2019-08-11 23:11:36 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 514)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:31:in `authorize_user'
+Started GET "/users/3" for ::1 at 2019-08-11 23:11:58 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 173)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:12:30 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:12:32 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 103)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:12:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:13:14 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:13:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 172)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:13:43 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 115)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:13:44 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 115)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:13:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 115)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:14:05 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:14:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:15:02 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:16:08 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 172)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:16:43 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started GET "/users/1" for ::1 at 2019-08-11 23:20:09 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 139)
+
+
+Started GET "/users" for ::1 at 2019-08-11 23:20:27 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 99ms (Views: 10.6ms | ActiveRecord: 7.6ms | Allocations: 7957)
+
+
+Started GET "/user" for ::1 at 2019-08-11 23:20:32 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0.rc2) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/3" for ::1 at 2019-08-11 23:20:53 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 94)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:21:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:14:in `show'
+Completed 200 OK in 126ms (Views: 0.1ms | ActiveRecord: 7.8ms | Allocations: 14035)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:22:06 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 200 OK in 53ms (Views: 0.1ms | ActiveRecord: 5.8ms | Allocations: 7346)
+
+
+Started GET "/users/3" for ::1 at 2019-08-11 23:23:05 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:14:in `show'
+Completed 200 OK in 210ms (Views: 0.1ms | ActiveRecord: 8.4ms | Allocations: 14053)
+
+
+Started GET "/users/1" for ::1 at 2019-08-11 23:23:11 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 2145)
+
+
+Started GET "/users/1" for ::1 at 2019-08-11 23:23:42 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 502)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:30:in `authorize_user'
+Started GET "/users/3" for ::1 at 2019-08-11 23:29:45 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 501)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:33:in `authorize_user'
+Started GET "/sessions" for ::1 at 2019-08-11 23:30:03 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.9ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 172ms (Views: 13.5ms | ActiveRecord: 8.9ms | Allocations: 8960)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:30:10 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 376ms (Views: 0.7ms | ActiveRecord: 5.6ms | Allocations: 6791)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 23:30:11 -0700
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 468)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:33:in `authorize_user'
+Started GET "/sessions" for ::1 at 2019-08-11 23:31:32 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (1.5ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 151ms (Views: 32.8ms | ActiveRecord: 23.7ms | Allocations: 8762)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:31:38 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 350ms (Views: 0.4ms | ActiveRecord: 4.4ms | Allocations: 6806)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 23:31:39 -0700
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 469)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:33:in `authorize_user'
+Started GET "/sessions" for ::1 at 2019-08-11 23:33:06 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 139ms (Views: 14.1ms | ActiveRecord: 9.2ms | Allocations: 8762)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:33:12 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `login'
+Completed 200 OK in 342ms (Views: 0.5ms | ActiveRecord: 3.9ms | Allocations: 6786)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 23:33:13 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 2.5ms | Allocations: 1376)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 23:34:57 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.7ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 85ms (Views: 15.7ms | ActiveRecord: 8.6ms | Allocations: 8779)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:35:02 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `login'
+Completed 200 OK in 365ms (Views: 0.2ms | ActiveRecord: 6.2ms | Allocations: 6621)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:41:13 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `login'
+Completed 200 OK in 327ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 6554)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:42:21 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `login'
+Completed 200 OK in 331ms (Views: 0.1ms | ActiveRecord: 9.0ms | Allocations: 6734)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 23:42:28 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 40ms (Views: 16.7ms | ActiveRecord: 5.2ms | Allocations: 8516)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:42:38 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `login'
+Completed 200 OK in 362ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1066)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 23:43:01 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 52ms (Views: 18.4ms | ActiveRecord: 7.3ms | Allocations: 8763)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:43:05 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `login'
+Completed 200 OK in 368ms (Views: 0.4ms | ActiveRecord: 5.4ms | Allocations: 6786)
+
+
+Started GET "/users/" for ::1 at 2019-08-11 23:43:05 -0700
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 469)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/application_controller.rb:30:in `authorize_user'
+Started POST "/users/login" for ::1 at 2019-08-11 23:49:22 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `login'
+Completed 200 OK in 413ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 7679)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 23:53:55 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+Completed 200 OK in 467ms (Views: 0.6ms | ActiveRecord: 12.2ms | Allocations: 7910)
+
+
+Started POST "/users/" for ::1 at 2019-08-11 23:54:36 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:35:in `create'
+  [1m[36mUser Create (561.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "lr001"], ["created_at", "2019-08-12 06:54:37.707858"], ["updated_at", "2019-08-12 06:54:37.707858"], ["password_digest", "$2a$12$K/9dbxt61aS5PqMYdc1uP.DDdsPkrsVy6PTzVSX4DYXquYfn4th8u"]]
+  ↳ app/controllers/users_controller.rb:35:in `create'
+  [1m[35m (229.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:35:in `create'
+Completed 201 Created in 1582ms (Views: 0.9ms | ActiveRecord: 790.9ms | Allocations: 2935)
+
+
+Started GET "/users" for ::1 at 2019-08-11 23:54:55 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 43ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 254)
+
+
+Started GET "/users" for ::1 at 2019-08-11 23:57:00 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 199ms (Views: 23.1ms | ActiveRecord: 10.1ms | Allocations: 8357)
+
+
+Started GET "/users" for ::1 at 2019-08-11 23:57:15 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 284)
+
+
+Started GET "/users" for ::1 at 2019-08-11 23:57:28 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 107ms (Views: 16.3ms | ActiveRecord: 16.2ms | Allocations: 8354)
+
+
+Started GET "/users/1" for ::1 at 2019-08-11 23:57:35 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 973)
+
+
+Started GET "/users/2" for ::1 at 2019-08-11 23:57:40 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 860)
+
+
+Started GET "/users/2" for ::1 at 2019-08-11 23:58:39 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 200 OK in 103ms (Views: 0.2ms | ActiveRecord: 8.7ms | Allocations: 7579)
+
+
+Started GET "/users/2" for ::1 at 2019-08-11 23:58:42 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 8.6ms | Allocations: 860)
+
+
+Started GET "/users" for ::1 at 2019-08-11 23:58:47 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 1.8ms | Allocations: 1739)
+
+
+Started GET "/users" for ::1 at 2019-08-12 00:00:23 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 111ms (Views: 14.1ms | ActiveRecord: 3.9ms | Allocations: 8351)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 00:00:28 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 969)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 00:09:22 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 0.8ms | Allocations: 44355)
+
+
+  
+NoMethodError (undefined method `decode_jwt' for #<UsersController:0x00007fd9d03eee30>):
+  
+app/controllers/application_controller.rb:29:in `authenticate_user'
+Started GET "/users/1" for ::1 at 2019-08-12 00:24:29 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 51ms (Views: 0.8ms | ActiveRecord: 0.8ms | Allocations: 7345)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 00:24:44 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 804)
+
+
+Started GET "/users" for ::1 at 2019-08-12 00:24:48 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 247)
+
+
+Started POST "/users" for ::1 at 2019-08-12 00:25:08 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:35:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "lr001"], ["created_at", "2019-08-12 07:25:08.662292"], ["updated_at", "2019-08-12 07:25:08.662292"], ["password_digest", "$2a$12$UC6Dtm2DkZljryn.TbNYuuxJSMrHqgEdnAPytpuTLAY53JGT/3XHi"]]
+  ↳ app/controllers/users_controller.rb:35:in `create'
+  [1m[35m (77.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:35:in `create'
+Completed 201 Created in 430ms (Views: 0.9ms | ActiveRecord: 78.1ms | Allocations: 2772)
+
+
+Started POST "/users/login" for ::1 at 2019-08-12 00:25:42 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+Completed 200 OK in 356ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1261)
+
+
+Started POST "/users/login" for ::1 at 2019-08-12 00:26:58 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+Completed 200 OK in 449ms (Views: 0.5ms | ActiveRecord: 14.7ms | Allocations: 7893)
+
+
+Started POST "/users/login" for ::1 at 2019-08-12 00:27:20 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+Completed 200 OK in 348ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1140)
+
+
+Started GET "/users" for ::1 at 2019-08-12 00:28:45 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 288)
+
+
+Started GET "/users" for ::1 at 2019-08-12 00:29:36 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 287)
+
+
+Started GET "/users" for ::1 at 2019-08-12 00:30:41 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 65ms (Views: 14.0ms | ActiveRecord: 7.2ms | Allocations: 8509)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 00:30:56 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 0.7ms | Allocations: 73143)
+
+
+  
+NameError (undefined local variable or method `get_current_user' for #<UsersController:0x00007fd9cf7cc490>):
+  
+app/controllers/users_controller.rb:16:in `show'
+Started GET "/users/1" for ::1 at 2019-08-12 00:36:19 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+Completed 200 OK in 69ms (Views: 1.1ms | ActiveRecord: 6.7ms | Allocations: 9170)
+
+
+Started GET "/users/2" for ::1 at 2019-08-12 00:36:33 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 2427)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 00:36:37 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+Completed 200 OK in 22ms (Views: 4.6ms | ActiveRecord: 2.6ms | Allocations: 2429)
+
+
+Started GET "/users/" for ::1 at 2019-08-12 00:36:50 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 1891)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 00:36:54 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 2427)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 00:37:57 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+Completed 200 OK in 112ms (Views: 0.5ms | ActiveRecord: 5.3ms | Allocations: 9153)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 00:39:24 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+Completed 200 OK in 72ms (Views: 0.6ms | ActiveRecord: 6.1ms | Allocations: 9155)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 00:45:36 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+Completed 200 OK in 63ms (Views: 0.8ms | ActiveRecord: 1.2ms | Allocations: 8979)
+
+
+Started GET "/users/" for ::1 at 2019-08-12 00:45:46 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 1892)
+
+
+Started GET "/users/2" for ::1 at 2019-08-12 00:45:50 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `set_user'
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+Completed 200 OK in 25ms (Views: 0.7ms | ActiveRecord: 15.1ms | Allocations: 2427)
+
+
+Started GET "/sessions" for ::1 at 2019-08-12 00:46:26 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (1.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 43ms (Views: 17.2ms | ActiveRecord: 8.7ms | Allocations: 8544)
+
+
+Started POST "/users/login" for ::1 at 2019-08-12 00:46:39 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+Completed 200 OK in 335ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 1365)
+
+
+Started GET "/users/" for ::1 at 2019-08-12 00:46:39 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users/3" for ::1 at 2019-08-12 00:46:39 -0700
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 1.5ms | Allocations: 2366)
+
+
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `set_user'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 2526)
+
+
+Started GET "/sessions" for ::1 at 2019-08-12 00:47:26 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.8ms | Allocations: 2180)
+
+
+Started POST "/users/login" for ::1 at 2019-08-12 00:47:32 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+Completed 200 OK in 342ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1243)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 00:47:32 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+Started GET "/users/" for ::1 at 2019-08-12 00:47:32 -0700
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `set_user'
+  [1m[36mUser Load (16.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+Completed 200 OK in 35ms (Views: 0.7ms | ActiveRecord: 18.9ms | Allocations: 3120)
+
+
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.7ms | Allocations: 2074)
+
+
+Started GET "/sessions" for ::1 at 2019-08-12 00:51:24 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (13.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 171ms (Views: 38.0ms | ActiveRecord: 33.8ms | Allocations: 8878)
+
+
+Started POST "/users/login" for ::1 at 2019-08-12 00:51:31 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+Completed 200 OK in 370ms (Views: 0.5ms | ActiveRecord: 6.4ms | Allocations: 6832)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 00:51:32 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `get_current_user'
+Started GET "/users/" for ::1 at 2019-08-12 00:51:32 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 1996)
+
+
+  [1m[36mBooking Load (78.0ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 208ms (Views: 0.1ms | ActiveRecord: 82.1ms | Allocations: 11674)
+
+
+Started GET "/users/2" for ::1 at 2019-08-12 00:52:58 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mBooking Load (0.4ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 107ms (Views: 0.1ms | ActiveRecord: 11.3ms | Allocations: 14543)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 00:53:20 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mBooking Load (1.7ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 4.4ms | Allocations: 2787)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 00:54:09 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mBooking Load (0.5ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 162ms (Views: 0.2ms | ActiveRecord: 16.1ms | Allocations: 15014)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 00:54:17 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 3536)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 00:54:18 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mBooking Load (7.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 19.0ms | Allocations: 3536)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 00:56:10 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `set_user'
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 200 OK in 147ms (Views: 0.2ms | ActiveRecord: 9.9ms | Allocations: 13859)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 00:58:03 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 52ms (Views: 0.2ms | ActiveRecord: 5.5ms | Allocations: 7597)
+
+
+Started GET "/users/2" for ::1 at 2019-08-12 00:58:08 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 885)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 00:58:12 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 885)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 00:58:36 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 885)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 00:59:40 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 101ms (Views: 0.2ms | ActiveRecord: 4.1ms | Allocations: 7597)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 00:59:59 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 885)
+
+
+Started GET "/users/" for ::1 at 2019-08-12 01:00:14 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 328)
+
+
+Started GET "/users/" for ::1 at 2019-08-12 01:00:35 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 328)
+
+
+Started POST "/users/login" for ::1 at 2019-08-12 01:00:44 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `login'
+Completed 200 OK in 353ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1287)
+
+
+Started GET "/users" for ::1 at 2019-08-12 01:01:10 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:11:in `index'
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 2.7ms | Allocations: 1897)
+
+
+Started GET "/users/1" for ::1 at 2019-08-12 01:01:15 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2325)
+
+
+Started GET "/users/2" for ::1 at 2019-08-12 01:01:19 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 2325)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 01:01:22 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 87ms (Views: 0.1ms | ActiveRecord: 5.5ms | Allocations: 11671)
+
+
+Started GET "/users/4" for ::1 at 2019-08-12 01:01:36 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 2322)
+
+
+Started GET "/users" for ::1 at 2019-08-12 01:02:34 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:11:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.4ms | Allocations: 1897)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 01:03:04 -0700
+  
+SyntaxError (/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:16: syntax error, unexpected ')', expecting =>
+...(include: :bookings, :sessions)
+...                              ^
+/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:16: syntax error, unexpected ')', expecting =>
+app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:16: syntax error, unexpected ')', expecting =>
+app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/3" for ::1 at 2019-08-12 01:05:35 -0700
+  
+SyntaxError (/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:16: syntax error, unexpected ')', expecting =>
+...(include: :bookings, :sessions)
+...                              ^
+/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:16: syntax error, unexpected ')', expecting =>
+app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:16: syntax error, unexpected ')', expecting =>
+app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/3" for ::1 at 2019-08-12 01:05:56 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 88ms (Views: 0.2ms | ActiveRecord: 12.8ms | Allocations: 15988)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 01:16:55 -0700
+  
+SyntaxError (/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:16: syntax error, unexpected ')', expecting =>
+...includes: :bookings, :sessions)
+...                              ^
+/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:16: syntax error, unexpected ')', expecting =>
+app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:16: syntax error, unexpected ')', expecting =>
+app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/3" for ::1 at 2019-08-12 01:20:32 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 11.8ms | Allocations: 12477)
+
+
+  
+NoMethodError (undefined method `sessions' for #<User:0x00007fd9d04a3ad8>):
+  
+app/controllers/users_controller.rb:16:in `show'
+Started GET "/users/3" for ::1 at 2019-08-12 01:20:34 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms | Allocations: 5522)
+
+
+  
+NoMethodError (undefined method `sessions' for #<User:0x00007fd9cfeb3678>):
+  
+app/controllers/users_controller.rb:16:in `show'
+Started GET "/users/3" for ::1 at 2019-08-12 01:20:40 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 4.2ms | Allocations: 5521)
+
+
+  
+NoMethodError (undefined method `sessions' for #<User:0x00007fd9cf693e98>):
+  
+app/controllers/users_controller.rb:16:in `show'
+Started GET "/users/3" for ::1 at 2019-08-12 01:22:32 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 8.3ms | Allocations: 12287)
+
+
+  
+NoMethodError (undefined method `sessions' for #<User:0x00007fd9d40322c0>):
+  
+app/controllers/users_controller.rb:16:in `show'
+Started GET "/users/3" for ::1 at 2019-08-12 01:22:55 -0700
+  
+SyntaxError (/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:16: syntax error, unexpected =>
+...json: @user.to_json(include: => :bookings)
+...                             ^~
+/Users/g360home/Documents/reactDashboard/react_stripe_dashboard_api/app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:16: syntax error, unexpected =>
+app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:16: syntax error, unexpected =>
+app/controllers/users_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/3" for ::1 at 2019-08-12 01:23:06 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mBooking Load (0.6ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 159ms (Views: 0.2ms | ActiveRecord: 12.0ms | Allocations: 16055)
+
+

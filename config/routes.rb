@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   resources :users do
    collection do
      post '/login', to: 'users#login'
-   end 
+   end
   end
-  resources :sessions, only:[:index]
+  resources :sessions, only:[:index, :show]
+  resources :bookings, only:[:index, :create]
   resources :subscriptions
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
