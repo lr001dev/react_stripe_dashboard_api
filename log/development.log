@@ -4474,3 +4474,54 @@ Completed 200 OK in 323ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 133
 Completed 201 Created in 784ms (Views: 5.2ms | ActiveRecord: 400.9ms | Allocations: 4732)
 
 
+Started GET "/sessions" for ::1 at 2019-08-11 19:07:15 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (1.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 42ms (Views: 36.3ms | ActiveRecord: 1.2ms | Allocations: 2181)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 19:07:17 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (2.9ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 2.9ms | Allocations: 2181)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 19:07:21 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.7ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+Started GET "/sessions" for ::1 at 2019-08-11 19:07:23 -0700
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 3166ms (Views: 3162.8ms | ActiveRecord: 0.7ms | Allocations: 2929)
+
+
+Started GET "/sessions" for ::1 at 2019-08-11 19:07:24 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (1.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 19.7ms | ActiveRecord: 1.8ms | Allocations: 2204)
+
+
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (1.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 1.1ms | Allocations: 2181)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 19:08:10 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 329ms (Views: 1.9ms | ActiveRecord: 1.2ms | Allocations: 735)
+
+
+Started POST "/users/login" for ::1 at 2019-08-11 19:08:17 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 200 OK in 353ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 734)
+
+
