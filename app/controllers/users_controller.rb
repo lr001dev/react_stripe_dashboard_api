@@ -3,27 +3,25 @@ class UsersController < ApplicationController
   before_action :authenticate_token, except: [:login, :create]
   before_action :authorize_user, except: [:login, :create, :index]
 
-
   # GET /users
   def index
-    @users = User.all
-
+    @users = User.select('first_name, last_name, email, username, id').all
     render json: @users
   end
 
   # GET /users/1
   def show
-    booked_sessions = Booking.joins(:session).select('session_id as id, name, modality, length, trainer, img_url, description, booked_date').order('booked_date ASC')
+    booked_sessions = Booking.joins(:session).select('session_id as id, name, modality, length, trainer, img_url, description, booked_date').where("user_id = #{ @user.id }").order('booked_date ASC')
     render json: { user: @user, bookings: booked_sessions }
   end
 
   def login
     user = User.find_by(username: params[:user][:username])
+    puts user
     if user && user.authenticate(params[:user][:password])
 
       token = create_token(user.id, user.username)
       cookies.signed[:jwt] = { value: token, httponly: true }
-
       render json: {status: 200, token: token, user: user }
     else
       render json: {status: 401, message: "Unauthorized"}
