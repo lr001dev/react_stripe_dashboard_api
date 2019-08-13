@@ -9585,3 +9585,362 @@ Processing by UsersController#show as */*
 Completed 200 OK in 332ms (Views: 42.3ms | ActiveRecord: 184.4ms | Allocations: 25675)
 
 
+Started GET "/sessions" for ::1 at 2019-08-12 19:36:46 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 22.5ms | ActiveRecord: 1.9ms | Allocations: 9592)
+
+
+Started POST "/users/login" for ::1 at 2019-08-12 19:37:23 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+Completed 200 OK in 327ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1371)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 19:37:25 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT first_name, last_name, email, username, id FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mBooking Load (0.7ms)[0m  [1m[34mSELECT session_id as id, name, modality, length, trainer, img_url, description, booked_date FROM "bookings" INNER JOIN "sessions" ON "sessions"."id" = "bookings"."session_id" ORDER BY booked_date ASC[0m
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 28ms (Views: 18.7ms | ActiveRecord: 1.4ms | Allocations: 12134)
+
+
+Started GET "/users/" for ::1 at 2019-08-12 19:37:25 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:11:in `index'
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 2387)
+
+
+  [1m[35m (122.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5043.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_stripe_dashboard_api_development"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (556.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_stripe_dashboard_api_development"[0m
+  [1m[35m (217.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_stripe_dashboard_api_test"[0m
+  [1m[35m (4790.2ms)[0m  [1m[35mCREATE DATABASE "react_stripe_dashboard_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (2381.2ms)[0m  [1m[35mCREATE DATABASE "react_stripe_dashboard_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (331.8ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "user_id" bigint NOT NULL, "session_id" bigint NOT NULL, "booked_date" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_session_id" ON "bookings"  ("session_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_user_id" ON "bookings"  ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "sessions" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" bigserial primary key, "name" character varying, "modality" character varying, "length" integer, "trainer" character varying, "img_url" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "bookings" ADD CONSTRAINT "fk_rails_0288ea7831"
+FOREIGN KEY ("session_id")
+  REFERENCES "sessions" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "bookings" ADD CONSTRAINT "fk_rails_ef0571f117"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (148.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190812184638)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190808190054),
+(20190808190402),
+(20190808195941),
+(20190810180547),
+(20190810182112),
+(20190812184126);
+
+[0m
+  [1m[35m (262.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-13 02:42:40.108637"], ["updated_at", "2019-08-13 02:42:40.108637"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "user_id" bigint NOT NULL, "session_id" bigint NOT NULL, "booked_date" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_session_id" ON "bookings"  ("session_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_user_id" ON "bookings"  ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "sessions" CASCADE[0m
+  [1m[35m (61.5ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" bigserial primary key, "name" character varying, "modality" character varying, "length" integer, "trainer" character varying, "img_url" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "bookings" ADD CONSTRAINT "fk_rails_0288ea7831"
+FOREIGN KEY ("session_id")
+  REFERENCES "sessions" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "bookings" ADD CONSTRAINT "fk_rails_ef0571f117"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190812184638)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190808190054),
+(20190808190402),
+(20190808195941),
+(20190810180547),
+(20190810182112),
+(20190812184126);
+
+[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-13 02:42:40.264045"], ["updated_at", "2019-08-13 02:42:40.264045"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-08-13 02:42:40.271778"], ["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (1.0ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Night Time Yoga"], ["modality", "Yoga"], ["length", 30], ["trainer", "Michelle LeMay"], ["img_url", "https://c.ndtvimg.com//yoga_625x300_1529482160763.jpg"], ["description", "Night time yoga that prepares for you a great nights sleep"], ["created_at", "2019-08-13 02:42:40.402322"], ["updated_at", "2019-08-13 02:42:40.402322"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Shake That Bootie"], ["modality", "Fitness"], ["length", 45], ["trainer", "Madona Grimes"], ["img_url", "https://ae01.alicdn.com/kf/HTB1gixqqpuWBuNjSszbq6AS7FXaU/FRECICI-Sexy-Flaws-Textured-Booty-Leggings-High-Waist-Flaws-Booty-Tights-Workout-Fitness-Sports-Pants-Push.jpg_640x640.jpg"], ["description", "The Butt workkout of a lifetime"], ["created_at", "2019-08-13 02:42:40.408970"], ["updated_at", "2019-08-13 02:42:40.408970"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.3ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dance Hop Pop"], ["modality", "Dance"], ["length", 30], ["trainer", "Michelle LeMay"], ["img_url", "http://www.heroymusic.com/wp-content/uploads/2018/01/Dance-Pop-1024x524-3000x3000.jpg"], ["description", "Hip Hop & Pop fusion"], ["created_at", "2019-08-13 02:42:40.414783"], ["updated_at", "2019-08-13 02:42:40.414783"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Meditate Feel Great"], ["modality", "Meditation"], ["length", 30], ["trainer", "David Romero"], ["img_url", "https://cdn.searchenginejournal.com/wp-content/uploads/2019/06/how-to-build-grit-with-meditation-760x400.png"], ["description", "Gong your way to a calm mind"], ["created_at", "2019-08-13 02:42:40.420353"], ["updated_at", "2019-08-13 02:42:40.420353"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.3ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dance Party Mania"], ["modality", "Dance"], ["length", 90], ["trainer", "Michelle LeMay"], ["img_url", "https://campusrec.fsu.edu/wp-content/uploads/2019/02/dance.jpg"], ["description", "Live dj dance party in cyberspace"], ["created_at", "2019-08-13 02:42:40.426754"], ["updated_at", "2019-08-13 02:42:40.426754"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.3ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Crush Work Yoga"], ["modality", "Yoga"], ["length", 60], ["trainer", "Michelle LeMay"], ["img_url", "http://mpoweryogastudio.com/wp-content/uploads/2014/04/hero-update-1.jpg"], ["description", "Get fired up and get your day started"], ["created_at", "2019-08-13 02:42:40.431962"], ["updated_at", "2019-08-13 02:42:40.431962"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSession Create (0.4ms)[0m  [1m[32mINSERT INTO "sessions" ("name", "modality", "length", "trainer", "img_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Spank Them Abs"], ["modality", "Fitness"], ["length", 20], ["trainer", "Madona Grimes"], ["img_url", "https://static.onecms.io/wp-content/uploads/sites/35/2019/07/16185123/woman-doing-best-obliques-exercises-ab-workout.jpg"], ["description", "The ab workout that creates ripples"], ["created_at", "2019-08-13 02:42:40.437190"], ["updated_at", "2019-08-13 02:42:40.437190"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Kratom"], ["email", "jk@gmail.com"], ["username", "jmoney"], ["created_at", "2019-08-13 02:42:41.415832"], ["updated_at", "2019-08-13 02:42:41.415832"], ["password_digest", "$2a$12$f/L.QlMlh88N5a05tPhMsuOugcROL7VNjrR8V1RtCBQxz2s18WNwC"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Sara"], ["last_name", "Connor"], ["email", "sc@gmail.com"], ["username", "saraplanet"], ["created_at", "2019-08-13 02:42:41.597599"], ["updated_at", "2019-08-13 02:42:41.597599"], ["password_digest", "$2a$12$sywd2xfw2U0SXjNVDeGXheJ6.3/c4tTEbWiT55vWB7vtVViZJqrw6"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Luis"], ["last_name", "Rosario"], ["email", "lr@gmail.com"], ["username", "lr001"], ["created_at", "2019-08-13 02:42:41.602659"], ["updated_at", "2019-08-13 02:42:41.602659"], ["password_digest", "$2a$12$Qz/mCw0vrbLT4szDFeuu0.YAYH4Zuhaxy897SnVGmgE/N1Gz0fEYC"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBooking Create (1.3ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["session_id", 7], ["booked_date", "2019-08-13 02:42:41.631317"], ["created_at", "2019-08-13 02:42:41.653975"], ["updated_at", "2019-08-13 02:42:41.653975"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["session_id", 3], ["booked_date", "2019-08-13 02:42:41.631361"], ["created_at", "2019-08-13 02:42:41.665666"], ["updated_at", "2019-08-13 02:42:41.665666"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["session_id", 5], ["booked_date", "2019-08-13 02:42:41.631365"], ["created_at", "2019-08-13 02:42:41.675252"], ["updated_at", "2019-08-13 02:42:41.675252"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["session_id", 4], ["booked_date", "2019-08-13 02:42:41.631368"], ["created_at", "2019-08-13 02:42:41.684846"], ["updated_at", "2019-08-13 02:42:41.684846"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["session_id", 7], ["booked_date", "2019-08-13 02:42:41.631370"], ["created_at", "2019-08-13 02:42:41.695983"], ["updated_at", "2019-08-13 02:42:41.695983"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.7ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["session_id", 3], ["booked_date", "2019-08-13 02:42:41.631373"], ["created_at", "2019-08-13 02:42:41.708054"], ["updated_at", "2019-08-13 02:42:41.708054"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["session_id", 6], ["booked_date", "2019-08-13 02:42:41.631375"], ["created_at", "2019-08-13 02:42:41.718709"], ["updated_at", "2019-08-13 02:42:41.718709"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["session_id", 7], ["booked_date", "2019-08-13 02:42:41.631377"], ["created_at", "2019-08-13 02:42:41.729893"], ["updated_at", "2019-08-13 02:42:41.729893"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["session_id", 5], ["booked_date", "2019-08-13 02:42:41.631379"], ["created_at", "2019-08-13 02:42:41.742887"], ["updated_at", "2019-08-13 02:42:41.742887"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["session_id", 4], ["booked_date", "2019-08-13 02:42:41.631382"], ["created_at", "2019-08-13 02:42:41.752258"], ["updated_at", "2019-08-13 02:42:41.752258"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["session_id", 3], ["booked_date", "2019-08-13 02:42:41.631384"], ["created_at", "2019-08-13 02:42:41.763261"], ["updated_at", "2019-08-13 02:42:41.763261"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["session_id", 3], ["booked_date", "2019-08-13 02:42:41.631389"], ["created_at", "2019-08-13 02:42:41.772332"], ["updated_at", "2019-08-13 02:42:41.772332"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["session_id", 1], ["booked_date", "2019-08-13 02:42:41.631391"], ["created_at", "2019-08-13 02:42:41.781215"], ["updated_at", "2019-08-13 02:42:41.781215"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["session_id", 6], ["booked_date", "2019-08-13 02:42:41.631396"], ["created_at", "2019-08-13 02:42:41.860423"], ["updated_at", "2019-08-13 02:42:41.860423"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["session_id", 5], ["booked_date", "2019-08-13 02:42:41.631398"], ["created_at", "2019-08-13 02:42:41.869339"], ["updated_at", "2019-08-13 02:42:41.869339"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["session_id", 5], ["booked_date", "2019-08-13 02:42:41.631400"], ["created_at", "2019-08-13 02:42:41.878444"], ["updated_at", "2019-08-13 02:42:41.878444"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["session_id", 4], ["booked_date", "2019-08-13 02:42:41.631403"], ["created_at", "2019-08-13 02:42:41.887722"], ["updated_at", "2019-08-13 02:42:41.887722"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["session_id", 2], ["booked_date", "2019-08-13 02:42:41.631405"], ["created_at", "2019-08-13 02:42:41.897582"], ["updated_at", "2019-08-13 02:42:41.897582"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "session_id", "booked_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["session_id", 2], ["booked_date", "2019-08-13 02:42:41.631407"], ["created_at", "2019-08-13 02:42:41.906356"], ["updated_at", "2019-08-13 02:42:41.906356"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from block in <module:ContentHelper> at /Users/g360home/.rbenv/versions/2.5.5/lib/ruby/gems/2.5.0/gems/actiontext-6.0.0.rc2/app/helpers/action_text/content_helper.rb:7)
+Started GET "/users/3" for ::1 at 2019-08-12 19:54:50 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT first_name, last_name, email, username, id FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mBooking Load (19.3ms)[0m  [1m[34mSELECT session_id as id, name, modality, length, trainer, img_url, description, booked_date FROM "bookings" INNER JOIN "sessions" ON "sessions"."id" = "bookings"."session_id" ORDER BY booked_date ASC[0m
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 198ms (Views: 31.4ms | ActiveRecord: 32.7ms | Allocations: 26340)
+
+
+Started GET "/sessions" for ::1 at 2019-08-12 20:02:01 -0700
+Processing by SessionsController#index as */*
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 3.8ms | Allocations: 8645)
+
+
+Started POST "/users/login" for ::1 at 2019-08-12 20:02:05 -0700
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+Completed 200 OK in 460ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 1419)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 20:02:06 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT first_name, last_name, email, username, id FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mBooking Load (1.2ms)[0m  [1m[34mSELECT session_id as id, name, modality, length, trainer, img_url, description, booked_date FROM "bookings" INNER JOIN "sessions" ON "sessions"."id" = "bookings"."session_id" ORDER BY booked_date ASC[0m
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 14ms (Views: 5.9ms | ActiveRecord: 2.1ms | Allocations: 7707)
+
+
+Started GET "/users/" for ::1 at 2019-08-12 20:02:07 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:11:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1689)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 20:09:49 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT first_name, last_name, email, username, id FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `set_user'
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 210ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 7984)
+
+
+Started GET "/users/login" for ::1 at 2019-08-12 20:10:04 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"login"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT first_name, last_name, email, username, id FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `set_user'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.8ms | Allocations: 855)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/controllers/users_controller.rb:61:in `set_user'
+Started POST "/users/login" for ::1 at 2019-08-12 20:10:25 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "lr001"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+Completed 200 OK in 339ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 1335)
+
+
+Started GET "/users/" for ::1 at 2019-08-12 20:10:49 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:11:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1584)
+
+
+Started GET "/users/3" for ::1 at 2019-08-12 20:10:56 -0700
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"username"=>"lr001", "password"=>"[FILTERED]"}, "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT first_name, last_name, email, username, id FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mBooking Load (1.7ms)[0m  [1m[34mSELECT session_id as id, name, modality, length, trainer, img_url, description, booked_date FROM "bookings" INNER JOIN "sessions" ON "sessions"."id" = "bookings"."session_id" ORDER BY booked_date ASC[0m
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 71ms (Views: 29.1ms | ActiveRecord: 2.5ms | Allocations: 16493)
+
+
