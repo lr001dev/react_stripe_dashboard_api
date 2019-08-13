@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :destroy]
-  # before_action :authorize_user
 
   # GET /bookings
   def index
@@ -11,15 +10,19 @@ class BookingsController < ApplicationController
 
   # GET /bookings/1
   def show
-    render json: @booking.to_json(include: :sessions)
+    render json: @booking
   end
 
   # POST /bookings
   def create
+    # puts "booking object"
+    # puts @booking
     @booking = Booking.new(booking_params)
+    @booking.user_id = params[:user_id]
+
 
     if @booking.save
-      render json: @booking, status: :created, location: @booking
+      render json: @booking, status: :created
     else
       render json: @booking.errors, status: :unprocessable_entity
     end
@@ -47,6 +50,6 @@ class BookingsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def booking_params
-      params.require(:booking).permit(:booked_date, :user_id, :session_id)
+      params.require(:booking).permit(:user_id, :session_id, :booked_date)
     end
 end

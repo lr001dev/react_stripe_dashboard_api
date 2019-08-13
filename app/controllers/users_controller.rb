@@ -13,7 +13,8 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user.to_json(include: :bookings)
+    booked_sessions = Booking.joins(:session).select('session_id as id, name, modality, length, trainer, img_url, description, booked_date').order('booked_date ASC')
+    render json: { user: @user, bookings: booked_sessions }
   end
 
   def login
@@ -57,7 +58,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.select('first_name, last_name, email, username, id').find(params[:id])
     end
 
     def create_token(id, username)
